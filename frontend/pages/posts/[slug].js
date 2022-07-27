@@ -8,6 +8,7 @@ import { getClient } from '../../lib/sanity.server'
 // }
 
 const Post = ({ post }) => {
+    if(!post) return null
 
     const { title, body, username} = post
     // console.log(post)
@@ -40,7 +41,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
    publishedAt,
 }`
 
-export const getStaticPaths = async () => {
+export async function getStaticPaths() {
     const paths = await getClient().fetch(
         groq`*[_type == "post" && defined(slug.current)][].slug.current`
     )
@@ -51,9 +52,8 @@ export const getStaticPaths = async () => {
     }
 }
 
-export const getStaticProps = async ({params, preview = false}) => {
+export async function getStaticProps({params, preview = false}) {
     const post = await getClient(preview).fetch(query, { slug: params.slug, })
-
     return {
         props: {
             post,

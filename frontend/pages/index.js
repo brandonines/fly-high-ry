@@ -16,7 +16,7 @@ export default function Home() {
             />
             <div className="blurb-container">
               <h3>A collection of stories, words, and remembrances.</h3>
-              <p>Written by his family and friends.</p>
+              <p>Written by Ryan's family and friends.</p>
           </div>
           </div>
         </div>

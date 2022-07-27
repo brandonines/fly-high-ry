@@ -15,7 +15,7 @@ import Card from "../components/Card"
 import Link from 'next/link'
 
 const Collection = ({ posts }) => {
-    console.log(posts)
+    // console.log(posts)
     return (
       <div className="cards-container">
         <div>
