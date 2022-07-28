@@ -12,7 +12,7 @@ const Card = forwardRef(({ onClick, href, post}, ref ) => {
                 <div className="info-container">
                     {/* <p>Published on: {new Date(publishedAt).toDateString()}</p> */}
                     {/* <p className="description">{description}</p> */}
-                    <p>{username}</p>
+                    <p className="author-info">{username}</p>
                 </div>
             </div>
             <img

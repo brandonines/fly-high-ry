@@ -15,9 +15,14 @@ export default function Submit() {
                     href="/"
                     rel="noopener noreferrer" 
                     >
-                        <button className="button">
-                            Contact
-                        </button>
+                        <div className="box-1">
+                            <div class="btn">
+                                <span>Contact</span>
+                            </div>
+                        </div>
+                        {/* <button className="btn btn-one">
+                                CONTACT
+                        </button> */}
                     </a>
                 </div>
             </div>
