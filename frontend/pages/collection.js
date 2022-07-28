@@ -18,7 +18,7 @@ const Collection = ({ posts }) => {
     // console.log(posts)
     return (
       <div className="cards-container">
-        <div>
+        <div className="cards">
           {posts?.map((post) => (
             <Link
               key={post._id}

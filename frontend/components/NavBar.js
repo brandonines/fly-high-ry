@@ -11,7 +11,6 @@ const MENU_LIST = [
         href: "/submit" },
 ];
 
-
 const Navbar = () => {
 
   const [navActive, setNavActive] = useState(null);

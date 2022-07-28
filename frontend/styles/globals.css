@@ -11,6 +11,10 @@ a {
   text-decoration: none;
 }
 
+hr{
+  color: #d7d7d7;
+}
+
 
 /* App */ 
 /* Decide if you want to use in _app.js */
@@ -240,9 +244,11 @@ header {
 
 
 
-/* Card */
+/* Card (for Posts) */
 .cards-container{
   margin-top: 16px;
+  justify-content: center;
+  justify-items: center;
 }
 
 .card-container{
@@ -285,34 +291,86 @@ header {
 
 /* Post */
 .post-container{
-  margin: 20px;
-  border-radius: 10px;
+  background-color: rgb(239, 235, 223);
+  margin: 20px auto;
+  border-radius: 7px;
   box-shadow:rgba(0,0,0,0.5) 0px 6px 24px 0, rgba(0,0,0,0.5) 0 0 0 1px;
   padding: 20px;
+  width: 80%;
+}
+
+.post-image{
   width: 100%;
+  border-radius: 7px;
+  padding: 20px 0;
+}
+
+.body-container{
+  font-family: "Libre Caslon Text";
+  font-size: 16px;
+  padding-top: 20px;
+  line-height: 2;
+}
+
+.author{
+  font-weight: 600;
+  margin: 10px 0;
+  color: #494949;
 }
 
 /* Submission Page */
 .submissions-container{
   display: flex;
   height: 100%;
+  margin: 20px auto;
+  width: 80%;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
+.submissions-container h1{
+  font-size: 42px;
+}
 
+.submissions-container p{
+  font-size: 16px;
+}
+
+.button{
+  font-family: "Lora";
+  font-size: 18px;
+  padding: 5px 20px;
+  margin-top: 10px;
+  background-color: #111111;
+  border-color: #111111;
+  border-width: 3px;
+  color: #fafafa;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all ease-in-out .2s;
+}
+
+.button:hover{
+  background-color: #111111db;
+  color: #fafafa;
+  border-color: #111111;
+  transition: all ease-in-out .2s;
+}
 
 /* Responsive Section */
 @media screen and (min-width: 768px) {
   .nav-items{
+    /* justify-content: end; */
     justify-content: end;
+    align-items: flex-end;
+    padding-right: 100px;
   }
 
   .card-container{
-    flex-direction: row;
+    /* flex-direction: row; */
     margin: 32px auto;
-    width: 800px;
+    /* width: 800px; */
     filter: grayscale(40%);
     transition: all ease-in-out .2s;
   }
@@ -320,6 +378,35 @@ header {
   .card-container:hover{
     transition: all ease-in-out .2s;
     filter: grayscale(0);
+  }
+
+  .cards{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .main-image{
+    /* width: 300px; */
+    width: 300px;
+    height: 100%;
+  }
+
+  .post-info{
+    
+  }
+
+  .post-image-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .post-image{
+    width: 80%;
+    border-radius: 7px;
   }
 
   .description{
@@ -331,6 +418,23 @@ header {
   }
 
   .blurb-container p{
+    font-size: 18px;
+  }
+
+  .post-container{
+  margin: 20px auto;
+  width: 60%;
+  }
+
+  .body-container{
+    font-size: 18px;
+  }
+
+  .submissions-container{
+    width: 600px;
+  }
+
+  .submissions-container p{
     font-size: 18px;
   }
 }

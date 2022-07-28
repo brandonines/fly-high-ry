@@ -4,7 +4,7 @@ export default function Submit() {
     return (
         <main>
             <div className="submissions-container">
-                <div className="submissions-text">
+                <div>
                     <h1>
                         Submissions
                     </h1>
@@ -15,8 +15,8 @@ export default function Submit() {
                     href="/"
                     rel="noopener noreferrer" 
                     >
-                        <button>
-                            Contact Me
+                        <button className="button">
+                            Contact
                         </button>
                     </a>
                 </div>

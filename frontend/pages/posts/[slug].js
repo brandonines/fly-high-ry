@@ -1,6 +1,7 @@
 import groq from 'groq'
 import { PortableText } from '@portabletext/react'
 import { getClient } from '../../lib/sanity.server'
+import { urlFor } from '../../lib/sanity'
 
 // Use if you are going to add images.  Add components={PostComponents} to portable text.
 // const PostComponents = {
@@ -10,7 +11,7 @@ import { getClient } from '../../lib/sanity.server'
 const Post = ({ post }) => {
     if(!post) return null
 
-    const { title, body, username} = post
+    const { title, body, username, mainImage} = post
     // console.log(post)
 
     return (
@@ -18,14 +19,22 @@ const Post = ({ post }) => {
             <>
                 { post && 
                 <article className="post-container">
-                    <h1>{title}</h1>
+                    {/* <div className="post-info"> */}
+                    <div>
+                        <h1>{title}</h1>
+                        <h3 className="author">{username}</h3>
+                    </div>
                     <hr/>
-                    <PortableText value={body}/>
+                    <div className="post-image-container">
+                        <img
+                            className="post-image"
+                            alt={title + 'image'}
+                            src={urlFor(mainImage)}
+                        />
+                    </div>
                     <hr/>
-                    <div className="info-container">
-                        <div className="author-container">
-                            <h3>Author: <strong>{username}</strong></h3>
-                        </div>
+                    <div className="body-container">
+                        <PortableText value={body}/>
                     </div>
                 </article> }              
             </>
@@ -39,6 +48,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
    "username": author->username,
    body,
    publishedAt,
+   mainImage,
 }`
 
 export async function getStaticPaths() {
