@@ -9,15 +9,16 @@ export default function Submit() {
                         Submissions
                     </h1>
                     <p>
-                        If you have any stories or words that you would like to share about Ryan, please send me an email and I will get it posted for you.
+                        If you have any stories or words that you would like to share about Ryan, please click the link below. We'd love to share as many stories as we can!
                     </p>
                     <a
-                    href="/"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSffiwGvTEEc_eLvyJPa5dFfLwDwnk0e2LWNEL4jrnrvAzKXwQ/viewform?usp=sf_linkß"
                     rel="noopener noreferrer" 
+                    target="_blank"
                     >
                         <div className="box-1">
                             <div class="btn">
-                                <span>Contact</span>
+                                <span>Submit</span>
                             </div>
                         </div>
                         {/* <button className="btn btn-one">
